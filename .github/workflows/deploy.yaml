@@ -20,4 +20,9 @@ jobs:
           key: ${{ secrets.PRIVATE_SSH_KEY }}
           port: 22
           script: |
-            ls  
+            ls
+            cd Nextjs-AWS-deployment-using-SSH
+            git pull
+            npm install
+            npm run build
+            pm2 restart all
